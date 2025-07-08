@@ -8,7 +8,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import { useMemo } from 'react'
 
 function App() {
-  const stripePromise = loadStripe('pk_test_51RiPNDR778p1iRcE3R2ZPNgaVEUSpNdmoghJe38Qnz4WFPraldKOKEI9sL9tXdi2PG7Y9ztcIrhf790jbqRhEQGR00mIPaq0KY');
+  const stripePromise = loadStripe('ADD PK KEY HERE');
   const appearance = {
     theme: 'stripe',
   };

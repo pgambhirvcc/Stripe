@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const stripe = require('stripe')('sk_test_51RiPNDR778p1iRcELC3eqpsgDZD4FkIbG38w6x3nBtxccCHnLR7Zo1R978K6Ce9bBwkNe6Pvlq1vGdgY2afoJoQQ00RI9RjXS9');
+const stripe = require('stripe')('ADD SK KEY HERE');
 const PORT = 4000;
 
 
