@@ -1,14 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const stripe = require('stripe')('ADD SK KEY HERE');
-const PORT = 4000;
+const stripe = require('stripe')(process.env.SK_KEY);
+const PORT = process.env.PORT || 4000;
+require('dotenv').config()
 
 
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => res.send('Heyy'));
+app.use(express.static('../dist'))
 
 app.post('/create-checkout-session', async (req, res) => {
   const body = req.body;
@@ -29,7 +30,7 @@ app.post('/create-checkout-session', async (req, res) => {
       mode: 'payment',
       ui_mode: 'custom',
       // The URL of your payment completion page
-      return_url: 'http://localhost:5173/paymentMade'
+      return_url: `https://stripe-4eqc.onrender.com/paymentSuccess`
     });
   
     res.json({checkoutSessionClientSecret: session.client_secret});
