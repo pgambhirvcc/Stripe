@@ -1,11 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { CheckoutProvider } from '@stripe/react-stripe-js'
 import CheckoutForm from './CheckForm'
 import { loadStripe } from '@stripe/stripe-js'
-import { useMemo } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import PaymentSuccess from './PaymentSuccess'
 
@@ -30,7 +26,6 @@ function App() {
           <Route path='/' element={<CheckoutForm />} />
           <Route path='/paymentSuccess' element={<PaymentSuccess />} />
         </Routes>
-      <CheckoutForm />
     </CheckoutProvider>
     </>
   )
